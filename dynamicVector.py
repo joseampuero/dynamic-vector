@@ -10,6 +10,7 @@ class DynamicVector:
         return ctypesAdapter.malloc(ctypesAdapter.sizeof(ctypesAdapter.c_int) * capacity)
 
     def _resize(self, new_capacity):
+        print("resize with", new_capacity)
         new_array = ctypesAdapter.malloc(ctypesAdapter.sizeof(ctypesAdapter.c_int) * new_capacity)
         ctypesAdapter.memmove(new_array, self._array, ctypesAdapter.sizeof(ctypesAdapter.c_int) * self._size)
         ctypesAdapter.free(self._array)
