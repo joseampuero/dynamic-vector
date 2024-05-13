@@ -23,3 +23,6 @@ def cast(obj, typ):
 
 def POINTER(typ):
     return ctypes.POINTER(typ)
+
+def cast(address, typ):
+    return ctypes.cast(address, POINTER(typ))

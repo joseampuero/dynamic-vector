@@ -28,6 +28,9 @@ class DynamicVector:
             raise IndexError("pop from empty vector")
         self._size -= 1
 
+    def get_by_position(address, typ=ctypesAdapter.c_int):
+        return ctypesAdapter.cast(address, typ)
+
     def __getitem__(self, index):
         if index < 0 or index >= self._size:
             raise IndexError("index out of range")
