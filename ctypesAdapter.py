@@ -4,6 +4,10 @@ import ctypes
 libc = ctypes.CDLL("libc.so.6")  # Ajusta según tu sistema operativo
 
 c_int = ctypes.c_int
+c_float = ctypes.c_float
+
+def CDLL(name):
+    return ctypes.CDLL(name)
 
 def malloc(size):
     print("Call malloc with size:", size)
